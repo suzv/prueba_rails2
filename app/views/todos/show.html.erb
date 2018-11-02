@@ -3,6 +3,7 @@
 
   <div class="container">
     <strong>Task:</strong>
+    <div class="row">
       <div class="card col-md-4" style="padding:2%">
           <!-- <% @todos.each do |t| %>
               <%= %>
@@ -10,7 +11,7 @@
           <h3 style="text-align:center">★ Ranking ★</h3>
             <hr>
 
-         
+
           <%@list.limit(5).order('created_at ASC').each do |u|%>
               <table>
                 <tbody>
@@ -22,21 +23,28 @@
               </table>
             <%end%>
         </div>
+
+        <div class="col-md-1">
+        </div>
+
+        <div class="card col-md-4" style="padding:2%">
+          <h6 style="text-align:center">Todos los usuarios que han completado esta tarea</h6>
+          <hr>
+          <%@list.each do |u|%>
+              <table>
+                <tbody>
+                  <tr>
+                      <td ><%= u.name %></td>
+                  </tr>
+                </tbody>
+              </table>
+            <%end%>
+        </div>
+
+      </div>
     </div>
 
-    <div class="container">
-      <h4>Todos los usuarios que han completado esta tarea</h4>
-      <%@list.each do |u|%>
-          <table>
-            <tbody>
-              <tr>
-                  <td ><%= u.name %></td>
-              </tr>
-            </tbody>
-          </table>
-        <%end%>
 
-    </div>
 
 
 
