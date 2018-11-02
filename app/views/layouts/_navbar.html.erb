@@ -3,7 +3,7 @@
 
   <a class="navbar-brand" href="<%= root_path %>">To Do List</a>
     <%if user_signed_in?%>
-         <li style="color:white">    TOTAL:
+         <li style="color:white">    TOTAL DE HECHOS:
          <%= current_user.todos.count %>  </li>
       <% end %>
 

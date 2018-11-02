@@ -11,9 +11,8 @@ class TodosController < ApplicationController
   # GET /todos/1
   # GET /todos/1.json
   def show
-    @todos = Todo.all
-    users = User.all
-    @list = users
+    @todos = Todo.find(params[:id])
+    @list = @todos.users
   end
 
   # GET /todos/new
@@ -37,9 +36,9 @@ class TodosController < ApplicationController
   end
 
   def undone
-    user = current_user
+    current = current_user
     @todos = Todo.find(params[:id])
-    @todos.users.delete(user)
+    @todos.users.delete(current)
     @todos.save
     redirect_to todos_path
   end
