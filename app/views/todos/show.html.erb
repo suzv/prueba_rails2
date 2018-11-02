@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+
+  <div class="container">
+    <strong>Task:</strong>
+      <div class="card col-md-4" style="padding:2%">
+          <!-- <% @todos.each do |t| %>
+              <%= %>
+          <%end%> -->
+          <h3 style="text-align:center">★ Ranking ★</h3>
+            <hr>
+
+         
+          <%@list.limit(5).order('created_at ASC').each do |u|%>
+              <table>
+                <tbody>
+                  <tr>
+                      <td ><%= image_tag u.photo%></td>
+                      <td ><h6><%= u.name %></h6></td>
+                  </tr>
+                </tbody>
+              </table>
+            <%end%>
+        </div>
+    </div>
+
+    <div class="container">
+      <h4>Todos los usuarios que han completado esta tarea</h4>
+      <%@list.each do |u|%>
+          <table>
+            <tbody>
+              <tr>
+                  <td ><%= u.name %></td>
+              </tr>
+            </tbody>
+          </table>
+        <%end%>
+
+    </div>
+
+
+
+
+<%= link_to 'Back', todos_path %>

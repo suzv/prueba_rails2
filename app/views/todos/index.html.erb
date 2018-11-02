@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="container">
+  <div class="row">
+    <% @todos.each_slice(3) do |todo| %>
+      <% todo.each do |t| %>
+        <div class="col">
+          <div class='card' style="padding:2%">
+            <%= image_tag t.photo,class: 'card-img-top' %>
+            <div class="body">
+              <h5 style="padding: 2%; text-align: center"><%= t.task %></h5>
+            </div>
+
+           <% if  %>
+            <%= 'Ya hiciste esta tarea' %>
+           <% else %>
+               <%= link_to 'Por hacer', done_path(t), class: 'btn btn-success', method: :post %>
+           <%end%>
+
+           <%= link_to 'Borrar Hecho', undone_path(t), class: 'btn btn-warning', method: :delete %>
+
+          <%= link_to 'lista de usuarios', t, class: 'btn btn-info' %>
+      </div>
+    </div>
+  <%end%>
+  <div class="w-100" style="margin-top: 20px"></div>
+<%end%>
+</div>
+</div>
