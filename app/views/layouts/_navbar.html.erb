@@ -3,8 +3,10 @@
 
   <a class="navbar-brand" href="<%= root_path %>">To Do List</a>
     <%if user_signed_in?%>
+         <li style="color:white"> User: <%= current_user.name %> <span style="font-size: 1.8em">☺</span> </li>
          <li style="color:white">    TOTAL DE HECHOS:
          <%= current_user.todos.count %>  </li>
+
       <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
