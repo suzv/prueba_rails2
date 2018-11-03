@@ -2,8 +2,11 @@
 
 
   <div class="container">
-    <strong>Task:</strong>
+
     <div class="row">
+      <div class="col-md-1">
+      </div>
+
       <div class="card col-md-4" style="padding:2%">
 
           <h3 style="text-align:center">★ Ranking ★</h3>
@@ -14,7 +17,9 @@
               <table>
                 <tbody>
                   <tr>
-                      <td ><%= image_tag u.photo%></td>
+                      <td ><%= image_tag u.photo, :style => "border-radius: 50%"%>
+                        </td>
+                        <td><h4>⇦</h4></td>
                       <td ><h6><%= u.name %></h6></td>
                   </tr>
                 </tbody>
