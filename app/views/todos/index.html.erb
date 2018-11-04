@@ -12,11 +12,15 @@
                 <div class="body">
                     <h5 style="padding: 2%; text-align: center"><%= t.task %></h5>
                 </div>
-            <%= link_to 'Por hacer', done_path(t), class: 'btn btn-success', method: :post %>
+                    <% if t.users.include?(current_user) %>
+                      <p style="text-align:center; border: solid black 1px; padding:2%;color:green; margin-bottom: 0%"> Ya hiciste esto! </p>
+                      <%= link_to 'Borrar Hecho', undone_path(t), class: 'btn btn-warning', method: :delete %>
+                    <% else %>
+                      <%= link_to 'Por hacer', done_path(t), class: 'btn btn-success', method: :post %>
+                     <% end %>
+                      <%= link_to 'lista de usuarios', t, class: 'btn btn-info' %>
 
-            <%= link_to 'Borrar Hecho', undone_path(t), class: 'btn btn-warning', method: :delete %>
 
-            <%= link_to 'lista de usuarios', t, class: 'btn btn-info' %>
           </div>
         </div>
         <%end%>
