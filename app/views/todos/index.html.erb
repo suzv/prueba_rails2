@@ -13,7 +13,7 @@
                     <h5 style="padding: 2%; text-align: center"><%= t.task %></h5>
                 </div>
                     <% if t.users.include?(current_user) %>
-                      <p style="text-align:center; border: solid black 1px; padding:2%;color:green; margin-bottom: 0%"> Ya hiciste esto! </p>
+                      <p style="text-align:center; border: solid black 1px; padding:2%;color:green; margin-bottom: 0%;border-radius:5px"> Ya hiciste esto! </p>
                       <%= link_to 'Borrar Hecho', undone_path(t), class: 'btn btn-warning', method: :delete %>
                     <% else %>
                       <%= link_to 'Por hacer', done_path(t), class: 'btn btn-success', method: :post %>
